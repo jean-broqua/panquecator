@@ -1,0 +1,128 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+    color: #4A5B74;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #FEFCEE;
+}
+
+li, a, .header-title{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #4A5B74;
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    width: 100vw;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90px;
+    height: 100vh;
+}
+
+span {
+    text-align: center;
+    margin: 0 15px;
+}
+
+p {
+    margin-bottom: 18px;
+}
+
+img {
+    width: 230px;
+    height: 160px;
+}
+
+input {
+    border-style: none;
+    border-radius: 9999em;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    height: 35px;
+    width: 130px;
+    background-color: white;
+    text-align: center;
+    font-size: 18px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.header-title {
+    font-family: "Comic Sans MS";
+    cursor: pointer;
+    margin-right: auto;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover {
+    color: #324157;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.input-fields {
+    padding-top: 140px;
+    display: flex;
+    font-weight: 600;
+}
+
+.result-container {
+    text-align: center;
+    font-size: 34px;
+    padding-top: 125px;
+}
+
+.result {
+    font-size: 60px;
+}
+
+
+/* Color Theme Swatches in Hex */
+.Pancake-2-1-hex { color: #4A5B74; }
+.Pancake-2-2-hex { color: #6893B0; }
+.Pancake-2-3-hex { color: #D9B573; }
+.Pancake-2-4-hex { color: #C09E56; }
+.Pancake-2-5-hex { color: #FAF6DB; }
+
+/* Color Theme Swatches in RGBA */
+.Pancake-2-1-rgba { color: rgba(73, 91, 116, 1); }
+.Pancake-2-2-rgba { color: rgba(103, 147, 175, 1); }
+.Pancake-2-3-rgba { color: rgba(216, 181, 114, 1); }
+.Pancake-2-4-rgba { color: rgba(191, 158, 86, 1); }
+.Pancake-2-5-rgba { color: rgba(249, 246, 219, 1); }
+
+/* Color Theme Swatches in HSLA */
+.Pancake-2-1-hsla { color: hsla(215, 22, 37, 1); }
+.Pancake-2-2-hsla { color: hsla(204, 31, 54, 1); }
+.Pancake-2-3-hsla { color: hsla(38, 57, 65, 1); }
+.Pancake-2-4-hsla { color: hsla(40, 45, 54, 1); }
+.Pancake-2-5-hsla { color: hsla(52, 75, 91, 1); }
