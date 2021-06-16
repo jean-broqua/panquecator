@@ -1,31 +1,43 @@
 const defaultRecipe = [
     {
         ingredient: 'ovos',
-        qtd: 50
+        qtd: 1,
+        unit: 'un'
     },
     {
         ingredient: 'leite',
-        qtd: 120
+        qtd: 120,
+        unit: 'ml'
     },
     {
         ingredient: 'oleo',
-        qtd: 10
+        qtd: 10,
+        unit: 'ml'
     },
     {
         ingredient: 'farinha',
-        qtd: 110
+        qtd: 110,
+        unit: 'g'
     },
     {
         ingredient: 'acucar',
-        qtd: 80
+        qtd: 80,
+        unit: 'g'
     },
     {
         ingredient: 'sal',
-        qtd: 5
+        qtd: 5,
+        unit: 'g'
     },
     {
         ingredient: 'fermento',
-        qtd: 10
+        qtd: 10,
+        unit: 'g'
+    },
+    {
+        ingredient: 'result',
+        qtd: 5,
+        unit: ''
     }
 ]
 
@@ -35,44 +47,41 @@ var multiplier = 1;
 
 $(document).ready(function() {
 
-    $('.input-fields').keyup(event, function() {
-        
-        var inputName = event.path[0].className;
-        var inputValue = $('.' + inputName).val();
+    // Defines a constant for the input value fields.
+    const inputField = $('.input-fields');
 
-        // Removes non numbers from the input.
-        if (isNaN(inputValue)) {
-            inputValue = inputValue.slice(0, -1);
-            $('.' + inputName).val(inputValue);
-            return;
-        }
-
-        inputValue = parseFloat(inputValue);
-
-        // Check what ingredient was modified
-        for(var i = 0; i < defaultRecipe.length; i++) {
-
-            // Gets the multiplier for the ingredients calculation
-            if(inputName === defaultRecipe[i].ingredient) {
-                multiplier = inputValue / defaultRecipe[i].qtd;
-            }
-        }
-
-        // Calculate the ingredient amount based on the multiplier
-        defaultRecipe.forEach(ingredient => {
-            if(ingredient.ingredient != inputName){
-                let num = ingredient.qtd * multiplier;
-
-                if (isNaN(inputValue)) {
-                    $('.' + ingredient.ingredient).val('');
-                    $('.result').text('0');
-                }else{
-                    $('.' + ingredient.ingredient).val(Math.round(num) + ' g');
-                    $('.result').text(Math.round(defaultPanquecaAmount * multiplier));
-                }
-            }
-        });
-
+    // Clears the selected field on click.
+    inputField.click(function(e) {
+        $('.' + e.target.className).val('');
     });
 
+    
+    inputField.keyup(function(e) {
+        var inputClass = $('.' + e.target.className);
+
+        // Removes any non digits from the input field.
+        inputClass.val(inputClass.val().replace(/[^0-9]/g, ''));
+
+        defaultRecipe.forEach(ing => {
+            if (e.target.className == ing.ingredient) return;
+            
+            // Finds the base qtd of the field selected
+            let l = defaultRecipe.length;
+            for (let i = 0; i < l; i++) {
+                if (defaultRecipe[i].ingredient == e.target.className) {
+                    var baseIng = defaultRecipe[i].qtd;
+                    break;
+                }
+            }
+
+            // Updates the amount of ingredient of the field.
+            let ingAmount = Math.round((inputClass.val() * ing.qtd) / baseIng);
+
+            if (ing.ingredient == "result") {
+                $('.result').text(ingAmount);
+            }
+
+            $('.' + ing.ingredient).val(ingAmount + ing.unit);
+        });
+    });
 });
