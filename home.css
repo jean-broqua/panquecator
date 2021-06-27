@@ -68,6 +68,10 @@ img{
     padding-bottom: 3rem;
 }
 
+.notice{
+    margin-top: 3rem;
+}
+
 .input-fields{
     display: grid;
     grid-template-areas: 'right left';
