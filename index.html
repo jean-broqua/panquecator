@@ -1,75 +1,87 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="home.css">
+        
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
 
-    <title>Panquecator</title>
-</head>
-<body>
+        <title>Panquecator</title>
+    </head>
+
     <header>
-        <p class="header-title">PANQUECATOR</p>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <div class="main-container">
-            <div class="image-container">
-                <img class="logo-image" src="img/logo.png" alt="Pancake logo image">
-            </div>
-
-            <div class="input-fields">
-                <span>
-                    <p>OVOS</p>
-                    <input type="text" class="ovos">
-                </span>
-                <span>
-                    <p>LEITE</p>
-                    <input type="text" class="leite">
-                </span>
-                <span>
-                    <p>ÓLEO</p>
-                    <input type="text" class="oleo">
-                </span>
-                <span>
-                    <p>FARINHA</p>
-                    <input type="text" class="farinha">
-                </span>
-                <span>
-                    <p>AÇÚCAR</p>
-                    <input type="text" class="acucar">
-                </span>
-                <span>
-                    <p>SAL</p>
-                    <input type="text" class="sal">
-                </span>
-                <span>
-                    <p>FERMENTO</p>
-                    <input type="text" class="fermento">
-                </span>
-            </div>
-
-            <div class="result-container">
-                <p class="result">0</p>
-                <p>PANQUECAS</p>
-            </div>
-            
+        <div class="header-title">
+            <p class="title">
+                panquecator
+            </p>
         </div>
 
-    </main>
+    </header>
 
-    <!-- Scripts -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="index.js"></script>
-</body>
+    <body>
+        <div class="main-container">
+            <div class="img-container">
+                <img src="img/main-img.png" alt="Imagem principal">
+            </div>
+            <div class="ing-container">
+
+                <div class="result-container">
+                    <p class="result">5</p>
+                    <p class="panquecas">PANQUECAS</p>
+                </div>
+
+                <div class="input-fields">
+                    <div class="right">
+
+                        <span>
+                            <input type="text" class="ovos" value="1un">
+                            <label>Óvos</label>
+                        </span>
+                        <span>
+                            <input type="text" class="leite" value="120ml">
+                            <label>Leite</label>
+                        </span>
+                        <span>
+                            <input type="text" class="oleo" value="10ml">
+                            <label>Óleo</label>
+                        </span>
+                        <span>
+                            <input type="text" class="farinha" value="110g">
+                            <label>Farinha</label>
+                        </span>
+
+                    </div>
+
+                    <div class="left">
+
+                        <span>
+                            <input type="text" class="acucar" value="80gm">
+                            <label>Açúcar</label>
+                        </span>
+                        <span>
+                            <input type="text" class="sal" value="5g">
+                            <label>Sal</label>
+                        </span>
+                        <span>
+                            <input type="text" class="fermento" value="10g">
+                            <label>Fermento</label>
+                        </span>
+
+                    </div>
+
+                </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Scripts -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="index.js"></script>
+    </body>
 </html>
